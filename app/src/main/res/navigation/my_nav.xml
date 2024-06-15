@@ -40,7 +40,7 @@
             app:destination="@id/listNoteFragment"
             app:enterAnim="@anim/slide_in_left" />
         <argument
-            android:name="currentUser"
+            android:name="currentNote"
             app:argType="com.example.noteappusingroomdatabase.roomdatabase.Note" />
     </fragment>
 </navigation>

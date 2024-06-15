@@ -19,12 +19,13 @@
         app:cardCornerRadius="20dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_cardView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/dark_gray"
             android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
+            android:background="@drawable/yellow_theme"
             app:layout_constraintStart_toStartOf="parent">
 
             <TextView

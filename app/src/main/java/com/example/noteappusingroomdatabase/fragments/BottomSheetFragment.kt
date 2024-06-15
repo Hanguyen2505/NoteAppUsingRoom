@@ -6,15 +6,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.noteappusingroomdatabase.BottomSheetListener
 import com.example.noteappusingroomdatabase.R
 import com.example.noteappusingroomdatabase.databinding.FragmentBottomSheetBinding
 import com.example.noteappusingroomdatabase.databinding.FragmentNoteBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-class BottomSheetFragment : BottomSheetDialogFragment() {
+class BottomSheetFragment : BottomSheetDialogFragment(), BottomSheetListener {
 
     private var _binding: FragmentBottomSheetBinding? = null
     private val binding get() = _binding!!
+    private var listener: BottomSheetListener? = null
 
     private val icDoneCode = R.drawable.ic_done
 
@@ -31,8 +33,13 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.deleteButton.setOnClickListener {
+            listener?.onDeleteButtonClicked()
+        }
+
         //this key turn your note into gray
         binding.colorNoteGray.setOnClickListener{
+            listener?.onGrayButtonClicked()
             binding.iconDoneGray.setImageResource(icDoneCode)
             binding.iconDoneYellow.setImageResource(0)
             binding.iconDoneRed.setImageResource(0)
@@ -43,6 +50,7 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
 
         //this key turn your note into yellow
         binding.colorNoteYellow.setOnClickListener{
+            listener?.onYellowButtonClicked()
             binding.iconDoneGray.setImageResource(0)
             binding.iconDoneYellow.setImageResource(icDoneCode)
             binding.iconDoneRed.setImageResource(0)
@@ -53,6 +61,7 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
 
         //this key turn your note into red
         binding.colorNoteRed.setOnClickListener{
+            listener?.onRedButtonClicked()
             binding.iconDoneGray.setImageResource(0)
             binding.iconDoneYellow.setImageResource(0)
             binding.iconDoneRed.setImageResource(icDoneCode)
@@ -63,6 +72,7 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
 
         //this key turn your note into blue
         binding.colorNoteBlue.setOnClickListener{
+            listener?.onBlueButtonClicked()
             binding.iconDoneGray.setImageResource(0)
             binding.iconDoneYellow.setImageResource(0)
             binding.iconDoneRed.setImageResource(0)
@@ -73,6 +83,7 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
 
         //this key turn your note into black
         binding.colorNoteBlack.setOnClickListener{
+            listener?.onBlackButtonClicked()
             binding.iconDoneGray.setImageResource(0)
             binding.iconDoneYellow.setImageResource(0)
             binding.iconDoneRed.setImageResource(0)
@@ -83,6 +94,7 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
 
         //this key turn your note into white
         binding.colorNoteWhite.setOnClickListener{
+            listener?.onWhiteButtonClicked()
             binding.iconDoneGray.setImageResource(0)
             binding.iconDoneYellow.setImageResource(0)
             binding.iconDoneRed.setImageResource(0)
@@ -90,6 +102,49 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
             binding.iconDoneBlack.setImageResource(0)
             binding.iconDoneWhite.setImageResource(icDoneCode)
         }
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        listener = parentFragment as? BottomSheetListener
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        listener = null
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+    override fun onDeleteButtonClicked() {
+        TODO("Not yet implemented")
+    }
+
+    override fun onGrayButtonClicked() {
+        TODO("Not yet implemented")
+    }
+
+    override fun onYellowButtonClicked() {
+        TODO("Not yet implemented")
+    }
+
+    override fun onRedButtonClicked() {
+        TODO("Not yet implemented")
+    }
+
+    override fun onBlueButtonClicked() {
+        TODO("Not yet implemented")
+    }
+
+    override fun onBlackButtonClicked() {
+        TODO("Not yet implemented")
+    }
+
+    override fun onWhiteButtonClicked() {
+        TODO("Not yet implemented")
     }
 
 

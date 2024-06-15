@@ -1,25 +1,32 @@
 package com.example.noteappusingroomdatabase.fragments
 
+import android.app.AlertDialog
+import android.graphics.Color
+import android.graphics.PorterDuff
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
+import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.example.noteappusingroomdatabase.BottomSheetListener
 import com.example.noteappusingroomdatabase.NoteViewModel
 import com.example.noteappusingroomdatabase.R
 import com.example.noteappusingroomdatabase.databinding.FragmentNoteBinding
 import com.example.noteappusingroomdatabase.roomdatabase.Note
-import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 
-class NoteFragment : Fragment() {
+class NoteFragment : Fragment(), BottomSheetListener {
 
     private lateinit var mNoteViewModel: NoteViewModel
 
     private var _binding: FragmentNoteBinding? = null
+
+    private lateinit var noteTheme: String
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -29,6 +36,7 @@ class NoteFragment : Fragment() {
 
         // Inflate the layout for this fragment
         _binding = FragmentNoteBinding.inflate(inflater, container, false)
+        noteTheme = "#A8565656"
 
         mNoteViewModel = ViewModelProvider(this).get(NoteViewModel::class.java)
         return binding.root
@@ -49,8 +57,9 @@ class NoteFragment : Fragment() {
         binding.textviewNotesBack.setOnClickListener {
             insertToDatabase()
             findNavController().navigate(R.id.action_noteFragment_to_listNoteFragment)
-
         }
+
+        binding.viewSubtitleIndicator.setBackgroundColor(getColor(noteTheme))
     }
 
     //check if the title is not empty, then the note can be saved
@@ -58,10 +67,11 @@ class NoteFragment : Fragment() {
         val title = _binding?.title?.text.toString()
         val subTitle = _binding?.subtitle?.text.toString()
         val noteInput = _binding?.noteInput?.text.toString()
+        val noteColor = noteTheme
 
         //check if the user
         if (inputCheck(title)) {
-            val note = Note(0, title, subTitle, noteInput)
+            val note = Note(0, title, subTitle, noteInput, noteColor)
             mNoteViewModel.upsertNote(note)
         }
     }
@@ -70,6 +80,51 @@ class NoteFragment : Fragment() {
     private fun inputCheck (title: String): Boolean {
         return title.isNotEmpty()
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+    fun getColor(colorString: String): Int {
+        return Color.parseColor(colorString)
+
+    }
+
+    override fun onDeleteButtonClicked() {
+
+    }
+
+    //*** change the color of viewSubtitleIndicator
+    override fun onGrayButtonClicked() {
+        binding.viewSubtitleIndicator.setBackgroundResource(R.drawable.gray_theme)
+    }
+
+    override fun onYellowButtonClicked() {
+        noteTheme = "#A8565656"
+        binding.viewSubtitleIndicator.setBackgroundResource(R.drawable.yellow_theme)
+    }
+
+    override fun onRedButtonClicked() {
+        noteTheme = "#DAC936"
+        binding.viewSubtitleIndicator.setBackgroundResource(R.drawable.red_theme)
+    }
+
+    override fun onBlueButtonClicked() {
+        noteTheme = "#F44336"
+        binding.viewSubtitleIndicator.setBackgroundResource(R.drawable.blue_theme)
+    }
+
+    override fun onBlackButtonClicked() {
+        noteTheme = "#FF000000"
+        binding.viewSubtitleIndicator.setBackgroundResource(R.drawable.black_theme)
+    }
+
+    override fun onWhiteButtonClicked() {
+        noteTheme = "#FF000000"
+        binding.viewSubtitleIndicator.setBackgroundResource(R.drawable.white_theme)
+    }
+    //*****************************
 
 
 }

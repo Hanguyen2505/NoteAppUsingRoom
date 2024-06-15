@@ -5,14 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.GridLayout
-import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.noteappusingroomdatabase.ListNoteAdapter
-import com.example.noteappusingroomdatabase.MainActivity
 import com.example.noteappusingroomdatabase.NoteViewModel
 import com.example.noteappusingroomdatabase.R
 import com.example.noteappusingroomdatabase.databinding.FragmentListNoteBinding
@@ -49,5 +46,4 @@ class ListNoteFragment : Fragment(){
 
         return binding.root
     }
-
 }
