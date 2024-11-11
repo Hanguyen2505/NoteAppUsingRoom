@@ -1,8 +1,4 @@
 
->kotlin:S1128"Remove this unused import.(å÷÷Şüÿÿÿÿ8šà°Ö2
->kotlin:S1128"Remove this unused import.(³†ûÿÿÿÿ8šà°Ö2
-9kotlin:S1128"Remove this unused import.(ÁÈÚø8šà°Ö2
-9kotlin:S1128"Remove this unused import.(´Ùí8šà°Ö2
-8kotlin:S1128"Remove this unused import.(±ÿu8šà°Ö2
-~kotlin:S1186^"ZAdd a nested comment explaining why this function is empty or complete the implementation.(şëæŒùÿÿÿÿ8à°Ö2
-Kkotlin:S6518)",Replace function call with indexed accessor.(Œ›öÙ8à°Ö2
+Qkotlin:S1135Œ"2Complete the task associated to this TODO comment.(û Ù8İ¸¦Ïƒ2
+~kotlin:S1186i"ZAdd a nested comment explaining why this function is empty or complete the implementation.(şëæŒùÿÿÿÿ8ä¸¦Ïƒ2
+Kkotlin:S65180",Replace function call with indexed accessor.(Œ›öÙ8å¸¦Ïƒ2
