@@ -1,23 +1,18 @@
 package com.example.noteappusingroomdatabase.fragments
 
-import android.app.AlertDialog
 import android.graphics.Color
-import android.graphics.PorterDuff
-import android.graphics.drawable.Drawable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.noteappusingroomdatabase.BottomSheetListener
 import com.example.noteappusingroomdatabase.NoteViewModel
 import com.example.noteappusingroomdatabase.R
 import com.example.noteappusingroomdatabase.databinding.FragmentNoteBinding
-import com.example.noteappusingroomdatabase.roomdatabase.Note
+import com.example.noteappusingroomdatabase.roomdatabase.note.Note
 
 
 class NoteFragment : Fragment(), BottomSheetListener {
@@ -71,8 +66,8 @@ class NoteFragment : Fragment(), BottomSheetListener {
 
         //check if the user
         if (inputCheck(title)) {
-            val note = Note(0, title, subTitle, noteInput, noteColor)
-            mNoteViewModel.upsertNote(note)
+//            val note = Note(, title, subTitle, noteInput, noteColor)
+//            mNoteViewModel.upsertNote(note)
         }
     }
 

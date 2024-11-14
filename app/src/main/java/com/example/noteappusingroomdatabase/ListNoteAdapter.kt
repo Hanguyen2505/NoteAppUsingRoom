@@ -10,7 +10,7 @@ import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.example.noteappusingroomdatabase.roomdatabase.Note
+import com.example.noteappusingroomdatabase.roomdatabase.note.Note
 import com.example.noteappusingroomdatabase.ui.fragments.ListNoteFragmentDirections
 
 class ListNoteAdapter: RecyclerView.Adapter<ListNoteAdapter.MyViewHolder>() {

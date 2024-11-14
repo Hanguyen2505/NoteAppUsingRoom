@@ -15,7 +15,7 @@ import com.example.noteappusingroomdatabase.BottomSheetListener
 import com.example.noteappusingroomdatabase.NoteViewModel
 import com.example.noteappusingroomdatabase.R
 import com.example.noteappusingroomdatabase.databinding.FragmentUpdateBinding
-import com.example.noteappusingroomdatabase.roomdatabase.Note
+import com.example.noteappusingroomdatabase.roomdatabase.note.Note
 import com.example.noteappusingroomdatabase.ui.fragments.UpdateFragmentArgs
 
 class UpdateFragment : Fragment(), BottomSheetListener {
@@ -73,8 +73,8 @@ class UpdateFragment : Fragment(), BottomSheetListener {
         val noteColor = noteTheme
 
         if (inputCheck(title)) {
-            val note = Note(args.currentNote.id, title, subTitle, noteInput, noteColor)
-            mNoteViewModel.upsertNote(note)
+//            val note = Note(args.currentNote.id, title, subTitle, noteInput, noteColor)
+//            mNoteViewModel.upsertNote(note)
         }
     }
 
@@ -98,8 +98,8 @@ class UpdateFragment : Fragment(), BottomSheetListener {
 
         val builder = AlertDialog.Builder(requireContext())
         builder.setPositiveButton("Yes") {_, _ ->
-            val note = Note(args.currentNote.id, title, subTitle, noteInput, noteColor)
-            mNoteViewModel.deleteNote(note)
+//            val note = Note(args.currentNote.id, title, subTitle, noteInput, noteColor)
+//            mNoteViewModel.deleteNote(note)
             findNavController().navigate(R.id.action_updateFragment_to_listNoteFragment)
             Toast.makeText(requireContext(), "Successfully deleted", Toast.LENGTH_SHORT).show()
         }

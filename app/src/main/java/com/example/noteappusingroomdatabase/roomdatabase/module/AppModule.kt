@@ -1,7 +1,5 @@
 package com.example.noteappusingroomdatabase.roomdatabase.module
 
-import android.content.Context
-import androidx.room.Room
 import com.example.noteappusingroomdatabase.roomdatabase.NoteDatabase
 import com.google.firebase.auth.FirebaseAuth
 import dagger.Module
