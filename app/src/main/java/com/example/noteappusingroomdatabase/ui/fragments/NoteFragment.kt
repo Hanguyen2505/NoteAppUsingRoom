@@ -11,11 +11,11 @@ import androidx.navigation.fragment.findNavController
 import com.example.noteappusingroomdatabase.BottomSheetListener
 import com.example.noteappusingroomdatabase.R
 import com.example.noteappusingroomdatabase.databinding.FragmentNoteBinding
-import com.example.noteappusingroomdatabase.roomdatabase.Note
-import com.example.noteappusingroomdatabase.ui.fragments.BottomSheetFragment
+import com.example.noteappusingroomdatabase.roomdatabase.note.Note
 import com.example.noteappusingroomdatabase.ui.viewmodel.NoteViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class NoteFragment : Fragment(), BottomSheetListener {
 
     private lateinit var mNoteViewModel: NoteViewModel
@@ -67,8 +67,8 @@ class NoteFragment : Fragment(), BottomSheetListener {
 
         //check if the user
         if (inputCheck(title)) {
-            val note = Note(0, title, subTitle, noteInput, noteColor)
-            mNoteViewModel.upsertNote(note)
+//            val note = Note(0, title, subTitle, noteInput, noteColor)
+//            mNoteViewModel.upsertNote(note)
         }
     }
 

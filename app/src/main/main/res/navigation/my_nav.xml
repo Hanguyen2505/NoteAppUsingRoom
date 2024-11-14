@@ -41,6 +41,6 @@
             app:enterAnim="@anim/slide_in_left" />
         <argument
             android:name="currentNote"
-            app:argType="com.example.noteappusingroomdatabase.roomdatabase.Note" />
+            app:argType="com.example.noteappusingroomdatabase.roomdatabase.note.Note" />
     </fragment>
 </navigation>

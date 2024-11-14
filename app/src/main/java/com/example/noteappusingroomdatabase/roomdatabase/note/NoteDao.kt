@@ -1,11 +1,10 @@
-package com.example.noteappusingroomdatabase.roomdatabase
+package com.example.noteappusingroomdatabase.roomdatabase.note
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Query
 import androidx.room.Upsert
-import com.example.noteappusingroomdatabase.roomdatabase.Note
 
 @Dao
 interface NoteDao {
@@ -18,4 +17,7 @@ interface NoteDao {
 
     @Query("SELECT * FROM note ORDER BY id ASC")
     fun readAllNotesData(): LiveData<List<Note>>
+
+    @Query("SELECT * FROM note WHERE userId = :userId")
+    suspend fun getNotesByUserId(userId: Int): List<Note>
 }
