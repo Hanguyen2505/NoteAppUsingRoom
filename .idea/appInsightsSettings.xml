@@ -9,15 +9,9 @@
               <option name="connection">
                 <ConnectionSetting>
                   <option name="appId" value="com.example.noteappusingroomdatabase" />
-<<<<<<< HEAD
                   <option name="mobileSdkAppId" value="1:422281817402:android:23d5e73e08507b4957f403" />
                   <option name="projectId" value="online-music-stream-app" />
                   <option name="projectNumber" value="422281817402" />
-=======
-                  <option name="mobileSdkAppId" value="1:942322071518:android:06aa659d8f827317b78f4f" />
-                  <option name="projectId" value="noteapp-e7f92" />
-                  <option name="projectNumber" value="942322071518" />
->>>>>>> redoNewBranch
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

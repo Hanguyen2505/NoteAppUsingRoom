@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/listNoteFragment"
-        android:name="com.example.noteappusingroomdatabase.ui.fragments.note.ListNoteFragment"
+        android:name="com.example.noteappusingroomdatabase.ui.fragments.ListNoteFragment"
         android:label="fragment_list_note"
         tools:layout="@layout/fragment_list_note" >
         <action
@@ -24,7 +24,7 @@
     </fragment>
     <fragment
         android:id="@+id/noteFragment"
-        android:name="com.example.noteappusingroomdatabase.ui.fragments.note.NoteFragment"
+        android:name="com.example.noteappusingroomdatabase.ui.fragments.NoteFragment"
         android:label="fragment_note"
         tools:layout="@layout/fragment_note" >
         <action
@@ -35,7 +35,7 @@
     </fragment>
     <fragment
         android:id="@+id/updateFragment"
-        android:name="com.example.noteappusingroomdatabase.ui.fragments.note.UpdateFragment"
+        android:name="com.example.noteappusingroomdatabase.ui.fragments.UpdateFragment"
         android:label="fragment_update"
         tools:layout="@layout/fragment_update" >
         <action

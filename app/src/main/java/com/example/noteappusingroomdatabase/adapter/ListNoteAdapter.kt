@@ -12,11 +12,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.noteappusingroomdatabase.R
 import com.example.noteappusingroomdatabase.roomdatabase.note.Note
-<<<<<<< HEAD
 import com.example.noteappusingroomdatabase.ui.fragments.ListNoteFragmentDirections
-=======
-import com.example.noteappusingroomdatabase.ui.fragments.note.ListNoteFragmentDirections
->>>>>>> redoNewBranch
 
 class ListNoteAdapter: RecyclerView.Adapter<ListNoteAdapter.MyViewHolder>() {
 

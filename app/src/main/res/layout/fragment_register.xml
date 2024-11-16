@@ -147,6 +147,7 @@
 
         </RelativeLayout>
     </RelativeLayout>
+<<<<<<< HEAD
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -279,4 +280,6 @@
     </RelativeLayout>
 
 >>>>>>> redoNewBranch
+=======
+>>>>>>> parent of d2ee488 (Merge branch 'redoNewBranch')
 </RelativeLayout>

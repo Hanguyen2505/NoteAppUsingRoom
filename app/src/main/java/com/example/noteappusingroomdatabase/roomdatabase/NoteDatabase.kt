@@ -28,11 +28,7 @@ abstract class NoteDatabase: RoomDatabase() {
                 return INSTANCE ?: Room.databaseBuilder(
                     context.applicationContext,
                     NoteDatabase::class.java,
-<<<<<<< HEAD
                     DATABASE_NAME
-=======
-                    "Note_database_user_note"
->>>>>>> redoNewBranch
                 ).build().also {
                     INSTANCE = it
                 }
