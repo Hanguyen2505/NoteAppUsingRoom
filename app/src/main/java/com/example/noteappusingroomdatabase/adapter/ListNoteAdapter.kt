@@ -11,8 +11,17 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.noteappusingroomdatabase.R
+<<<<<<< HEAD
 import com.example.noteappusingroomdatabase.roomdatabase.note.Note
+<<<<<<< HEAD
+import com.example.noteappusingroomdatabase.ui.fragments.ListNoteFragmentDirections
+=======
 import com.example.noteappusingroomdatabase.ui.fragments.note.ListNoteFragmentDirections
+>>>>>>> redoNewBranch
+=======
+import com.example.noteappusingroomdatabase.roomdatabase.Note
+import com.example.noteappusingroomdatabase.ui.fragments.ListNoteFragmentDirections
+>>>>>>> parent of 43a6b8b (new update)
 
 class ListNoteAdapter: RecyclerView.Adapter<ListNoteAdapter.MyViewHolder>() {
 

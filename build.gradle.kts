@@ -2,7 +2,14 @@
 plugins {
     alias(libs.plugins.androidApplication) apply false
     alias(libs.plugins.jetbrainsKotlinAndroid) apply false
+<<<<<<< HEAD
+<<<<<<< HEAD
+    id("com.google.dagger.hilt.android") version "2.51.1" apply false
+=======
     alias(libs.plugins.googleGmsGoogleServices) apply false
+>>>>>>> redoNewBranch
+=======
+>>>>>>> parent of 43a6b8b (new update)
 }
 buildscript {
     repositories {
@@ -11,5 +18,7 @@ buildscript {
     dependencies {
         val nav_version = "2.7.7"
         classpath("androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version")
+
+        classpath ("com.android.tools.build:gradle:8.5.1")
     }
 }

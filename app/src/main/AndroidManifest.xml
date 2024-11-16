@@ -2,24 +2,38 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"/>
 
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
         android:requestLegacyExternalStorage="true"
+        android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:name=".roomdatabase.other.MyApplication"
         android:theme="@style/Theme.NoteAppUsingRoomDatabase"
         tools:targetApi="31">
         <activity
+<<<<<<< HEAD
+<<<<<<< HEAD
+            android:name=".ui.activity.SignUpActivity"
+            android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".NavigationActivity"-->
+<!--            android:exported="false"-->
+<!--            android:label="@string/title_activity_navigation"-->
+<!--            android:theme="@style/Theme.NoteAppUsingRoomDatabase.NoActionBar" />-->
+=======
             android:name=".ui.activity.LoginActivity"
             android:exported="false" />
+>>>>>>> redoNewBranch
         <activity
+=======
+>>>>>>> parent of 43a6b8b (new update)
             android:name=".ui.activity.MainActivity"
             android:exported="true">
             <intent-filter>
