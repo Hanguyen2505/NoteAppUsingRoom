@@ -1,17 +1,28 @@
 {
   "project_info": {
+<<<<<<< HEAD
     "project_number": "422281817402",
     "project_id": "online-music-stream-app",
     "storage_bucket": "online-music-stream-app.appspot.com"
+=======
+    "project_number": "942322071518",
+    "project_id": "noteapp-e7f92",
+    "storage_bucket": "noteapp-e7f92.firebasestorage.app"
+>>>>>>> redoNewBranch
   },
   "client": [
     {
       "client_info": {
+<<<<<<< HEAD
         "mobilesdk_app_id": "1:422281817402:android:23d5e73e08507b4957f403",
+=======
+        "mobilesdk_app_id": "1:942322071518:android:06aa659d8f827317b78f4f",
+>>>>>>> redoNewBranch
         "android_client_info": {
           "package_name": "com.example.noteappusingroomdatabase"
         }
       },
+<<<<<<< HEAD
       "oauth_client": [
         {
           "client_id": "422281817402-s3mbn1jfvco16t5sf06qgfn3hfqkdj8d.apps.googleusercontent.com",
@@ -21,10 +32,17 @@
       "api_key": [
         {
           "current_key": "AIzaSyAeD9I5f2S8_kUaNHWXkeOXf6iPbqPv6fg"
+=======
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVx2ay4irsB4NT6O24TwKu8KuPAETy6Ns"
+>>>>>>> redoNewBranch
         }
       ],
       "services": {
         "appinvite_service": {
+<<<<<<< HEAD
           "other_platform_oauth_client": [
             {
               "client_id": "422281817402-s3mbn1jfvco16t5sf06qgfn3hfqkdj8d.apps.googleusercontent.com",
@@ -68,6 +86,9 @@
               "client_type": 3
             }
           ]
+=======
+          "other_platform_oauth_client": []
+>>>>>>> redoNewBranch
         }
       }
     }
