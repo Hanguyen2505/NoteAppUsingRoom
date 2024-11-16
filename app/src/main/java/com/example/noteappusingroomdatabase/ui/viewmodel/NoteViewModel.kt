@@ -4,9 +4,9 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
-import com.example.noteappusingroomdatabase.roomdatabase.note.Note
+import com.example.noteappusingroomdatabase.roomdatabase.Note
 import com.example.noteappusingroomdatabase.roomdatabase.NoteDatabase
-import com.example.noteappusingroomdatabase.roomdatabase.note.NoteRepository
+import com.example.noteappusingroomdatabase.roomdatabase.NoteRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -31,10 +31,5 @@ class NoteViewModel(application: Application): AndroidViewModel(application) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.deleteNote(note)
         }
-    }
-
-    fun getNotesByUserId(userId: String): LiveData<List<Note>> {
-        return repository.getNotesByUserId(userId)
-
     }
 }
