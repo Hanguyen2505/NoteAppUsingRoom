@@ -2,12 +2,17 @@
 <project version="4">
   <component name="deploymentTargetSelector">
     <selectionStates>
-      <SelectionState runConfigName="MainActivity">
-        <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
+<<<<<<< HEAD
         <DropdownSelection timestamp="2024-11-16T18:06:52.391489Z">
+=======
+<<<<<<< HEAD
+        <DropdownSelection timestamp="2024-11-14T10:59:29.574885500Z">
+=======
+        <DropdownSelection timestamp="2024-11-15T03:00:07.124720Z">
+>>>>>>> redoNewBranch
+>>>>>>> 4bb91321a4f7994e38b0e547c09c7c5e0a9f96c8
           <Target type="DEFAULT_BOOT">
             <handle>
               <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\admin\.android\avd\Pixel_7a_API_VanillaIceCream.avd" />

@@ -15,6 +15,7 @@ import com.example.noteappusingroomdatabase.roomdatabase.user.UserDao
     exportSchema = false
 )
 abstract class NoteDatabase: RoomDatabase() {
+
     abstract fun noteDao(): NoteDao
     abstract fun userDao(): UserDao
 
@@ -27,11 +28,17 @@ abstract class NoteDatabase: RoomDatabase() {
                 return INSTANCE ?: Room.databaseBuilder(
                     context.applicationContext,
                     NoteDatabase::class.java,
+<<<<<<< HEAD
+                    DATABASE_NAME
+=======
                     "Note_database_user_note"
+>>>>>>> redoNewBranch
                 ).build().also {
                     INSTANCE = it
                 }
             }
         }
+
+        private const val DATABASE_NAME: String = "note_database"
     }
 }
