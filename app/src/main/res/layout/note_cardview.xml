@@ -42,17 +42,6 @@
                 tools:ignore="MissingConstraints" />
 
             <TextView
-                android:id="@+id/note_input_card_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="Note Input"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/subtitle_card_view" />
-
-            <TextView
                 android:id="@+id/subtitle_card_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

@@ -9,9 +9,9 @@
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/sort"
-        android:icon="@drawable/ic_sort"
-        android:title="sort"
+        android:id="@+id/account"
+        android:icon="@drawable/ic_account"
+        android:title="account"
         app:showAsAction="ifRoom" />
 
 </menu>

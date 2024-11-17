@@ -47,7 +47,7 @@ class ListNoteFragment : Fragment(){
                     true
                 }
 
-                R.id.sort -> {
+                R.id.account -> {
                     val intent = Intent(requireContext(), LoginActivity::class.java)
                     startActivity(intent)
                     true

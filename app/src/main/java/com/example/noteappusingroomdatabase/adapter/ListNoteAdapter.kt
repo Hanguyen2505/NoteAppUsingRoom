@@ -11,8 +11,8 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.noteappusingroomdatabase.R
-import com.example.noteappusingroomdatabase.fragments.ListNoteFragmentDirections
 import com.example.noteappusingroomdatabase.roomdatabase.note.Note
+import com.example.noteappusingroomdatabase.ui.fragments.note.ListNoteFragmentDirections
 
 class ListNoteAdapter: RecyclerView.Adapter<ListNoteAdapter.MyViewHolder>() {
 
@@ -21,7 +21,6 @@ class ListNoteAdapter: RecyclerView.Adapter<ListNoteAdapter.MyViewHolder>() {
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val titleCv: TextView = itemView.findViewById(R.id.title_card_view)
         val subtitleCv: TextView = itemView.findViewById(R.id.subtitle_card_view)
-        val noteInputCv: TextView = itemView.findViewById(R.id.note_input_card_view)
         val cardView: CardView = itemView.findViewById(R.id.note_card_view)
         val layoutCardView: ConstraintLayout = itemView.findViewById(R.id.layout_cardView)
     }
@@ -45,7 +44,6 @@ class ListNoteAdapter: RecyclerView.Adapter<ListNoteAdapter.MyViewHolder>() {
         val currentItem = listNote[position]
         holder.titleCv.text = currentItem.title
         holder.subtitleCv.text = currentItem.subTitle
-        holder.noteInputCv.text = currentItem.noteInput
 
         val colorStringCode = currentItem.noteColor
         holder.layoutCardView.setBackgroundColor(parseColor(colorStringCode))
