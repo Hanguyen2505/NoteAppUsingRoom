@@ -18,13 +18,8 @@ import com.example.noteappusingroomdatabase.ui.viewmodel.NoteViewModel
 import com.example.noteappusingroomdatabase.R
 import com.example.noteappusingroomdatabase.databinding.FragmentUpdateBinding
 import com.example.noteappusingroomdatabase.roomdatabase.note.Note
-<<<<<<< HEAD:app/src/main/java/com/example/noteappusingroomdatabase/ui/fragments/UpdateFragment.kt
-import dagger.hilt.android.AndroidEntryPoint
-=======
 import com.google.firebase.auth.FirebaseAuth
->>>>>>> redoNewBranch:app/src/main/java/com/example/noteappusingroomdatabase/ui/fragments/note/UpdateFragment.kt
 
-@AndroidEntryPoint
 class UpdateFragment : Fragment(), BottomSheetListener {
 
     private lateinit var mNoteViewModel: NoteViewModel
@@ -79,13 +74,8 @@ class UpdateFragment : Fragment(), BottomSheetListener {
         val noteColor = noteTheme
 
         if (inputCheck(title)) {
-<<<<<<< HEAD:app/src/main/java/com/example/noteappusingroomdatabase/ui/fragments/UpdateFragment.kt
-//            val note = Note(args.currentNote.id, title, subTitle, noteInput, noteColor)
-//            mNoteViewModel.upsertNote(note)
-=======
             val note = Note(args.currentNote.id, firebaseAuth.currentUser!!.uid, title, subTitle, noteInput, noteColor)
             mNoteViewModel.upsertNote(note)
->>>>>>> redoNewBranch:app/src/main/java/com/example/noteappusingroomdatabase/ui/fragments/note/UpdateFragment.kt
         }
     }
 
@@ -108,13 +98,8 @@ class UpdateFragment : Fragment(), BottomSheetListener {
 
         val builder = AlertDialog.Builder(requireContext())
         builder.setPositiveButton("Yes") {_, _ ->
-<<<<<<< HEAD:app/src/main/java/com/example/noteappusingroomdatabase/ui/fragments/UpdateFragment.kt
-//            val note = Note(args.currentNote.id, title, subTitle, noteInput, noteTheme)
-//            mNoteViewModel.deleteNote(note)
-=======
             val note = Note(args.currentNote.id, firebaseAuth.currentUser!!.uid, title, subTitle, noteInput, noteTheme)
             mNoteViewModel.deleteNote(note)
->>>>>>> redoNewBranch:app/src/main/java/com/example/noteappusingroomdatabase/ui/fragments/note/UpdateFragment.kt
             findNavController().navigate(R.id.action_updateFragment_to_listNoteFragment)
             Toast.makeText(requireContext(), "Successfully deleted", Toast.LENGTH_SHORT).show()
         }

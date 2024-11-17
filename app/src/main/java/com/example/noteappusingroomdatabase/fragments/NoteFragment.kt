@@ -9,10 +9,12 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.noteappusingroomdatabase.BottomSheetListener
-import com.example.noteappusingroomdatabase.NoteViewModel
 import com.example.noteappusingroomdatabase.R
 import com.example.noteappusingroomdatabase.databinding.FragmentNoteBinding
 import com.example.noteappusingroomdatabase.roomdatabase.note.Note
+import com.example.noteappusingroomdatabase.ui.fragments.note.BottomSheetFragment
+import com.example.noteappusingroomdatabase.ui.viewmodel.NoteViewModel
+import com.google.firebase.auth.FirebaseAuth
 
 
 class NoteFragment : Fragment(), BottomSheetListener {
@@ -24,16 +26,18 @@ class NoteFragment : Fragment(), BottomSheetListener {
     private lateinit var noteTheme: String
     private val binding get() = _binding!!
 
+    private val firebaseAuth = FirebaseAuth.getInstance()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         // Inflate the layout for this fragment
         _binding = FragmentNoteBinding.inflate(inflater, container, false)
         noteTheme = "#A8565656"
 
-        mNoteViewModel = ViewModelProvider(this).get(NoteViewModel::class.java)
+        mNoteViewModel = ViewModelProvider(this)[NoteViewModel::class.java]
         return binding.root
 
     }
@@ -66,8 +70,8 @@ class NoteFragment : Fragment(), BottomSheetListener {
 
         //check if the user
         if (inputCheck(title)) {
-//            val note = Note(, title, subTitle, noteInput, noteColor)
-//            mNoteViewModel.upsertNote(note)
+            val note = Note(0, firebaseAuth.currentUser!!.uid, title, subTitle, noteInput, noteColor)
+            mNoteViewModel.upsertNote(note)
         }
     }
 

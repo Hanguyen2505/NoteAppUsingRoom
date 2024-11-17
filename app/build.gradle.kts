@@ -5,11 +5,8 @@ plugins {
     id("kotlin-android")
     id("androidx.navigation.safeargs.kotlin")
     id("kotlin-parcelize")
-<<<<<<< HEAD
     id ("com.google.dagger.hilt.android")
-=======
     alias(libs.plugins.googleGmsGoogleServices)
->>>>>>> redoNewBranch
 }
 
 android {
@@ -57,14 +54,11 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
-<<<<<<< HEAD
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.annotation)
     implementation(libs.firebase.auth.ktx)
-=======
     implementation(libs.firebase.auth.ktx)
     implementation(libs.firebase.auth)
->>>>>>> redoNewBranch
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

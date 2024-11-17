@@ -12,19 +12,11 @@ import kotlinx.parcelize.Parcelize
 @Entity(
     tableName = "note",
     foreignKeys = [ForeignKey(
-<<<<<<< HEAD
-    entity = User::class,
-        parentColumns = ["userId"],
-        childColumns = ["userId"],
-        onDelete = ForeignKey.CASCADE)
-    ],
-=======
         entity = User::class,
         parentColumns = ["userId"],
         childColumns = ["userId"],
         onDelete = ForeignKey.CASCADE
     )],
->>>>>>> redoNewBranch
     indices = [Index(value = ["userId"])]
 )
 data class Note(

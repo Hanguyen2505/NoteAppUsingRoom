@@ -10,14 +10,11 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.room.util.query
 import com.example.noteappusingroomdatabase.adapter.ListNoteAdapter
 import com.example.noteappusingroomdatabase.ui.viewmodel.NoteViewModel
 import com.example.noteappusingroomdatabase.R
 import com.example.noteappusingroomdatabase.databinding.FragmentListNoteBinding
-import com.example.noteappusingroomdatabase.roomdatabase.user.User
 import com.example.noteappusingroomdatabase.ui.activity.LoginActivity
-import com.example.noteappusingroomdatabase.ui.fragments.login.LoginFragment
 import com.example.noteappusingroomdatabase.ui.viewmodel.UserViewModel
 import com.google.firebase.auth.FirebaseAuth
 

@@ -19,10 +19,6 @@ interface NoteDao {
     fun readAllNotesData(): LiveData<List<Note>>
 
     @Query("SELECT * FROM note WHERE userId = :userId")
-<<<<<<< HEAD
-    suspend fun getNotesByUserId(userId: Int): List<Note>
-=======
     fun getNotesByUserId(userId: String): LiveData<List<Note>>
 
->>>>>>> redoNewBranch
 }

@@ -56,7 +56,7 @@ class LoginFragment : Fragment() {
                 }
                 result.onFailure {
                     val exception = result.exceptionOrNull()
-                    Toast.makeText(requireContext(), "Login failed: ${exception?.message}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Login failed: ${exception?.message}", Toast.LENGTH_LONG).show()
                 }
             }
 

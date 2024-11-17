@@ -13,13 +13,9 @@ import com.example.noteappusingroomdatabase.R
 import com.example.noteappusingroomdatabase.databinding.FragmentNoteBinding
 import com.example.noteappusingroomdatabase.roomdatabase.note.Note
 import com.example.noteappusingroomdatabase.ui.viewmodel.NoteViewModel
-<<<<<<< HEAD:app/src/main/java/com/example/noteappusingroomdatabase/ui/fragments/NoteFragment.kt
-import dagger.hilt.android.AndroidEntryPoint
-=======
 import com.google.firebase.auth.FirebaseAuth
->>>>>>> redoNewBranch:app/src/main/java/com/example/noteappusingroomdatabase/ui/fragments/note/NoteFragment.kt
 
-@AndroidEntryPoint
+
 class NoteFragment : Fragment(), BottomSheetListener {
 
     private lateinit var mNoteViewModel: NoteViewModel
@@ -73,13 +69,8 @@ class NoteFragment : Fragment(), BottomSheetListener {
 
         //check if the user
         if (inputCheck(title)) {
-<<<<<<< HEAD:app/src/main/java/com/example/noteappusingroomdatabase/ui/fragments/NoteFragment.kt
-//            val note = Note(0, title, subTitle, noteInput, noteColor)
-//            mNoteViewModel.upsertNote(note)
-=======
             val note = Note(0, firebaseAuth.currentUser!!.uid, title, subTitle, noteInput, noteColor)
             mNoteViewModel.upsertNote(note)
->>>>>>> redoNewBranch:app/src/main/java/com/example/noteappusingroomdatabase/ui/fragments/note/NoteFragment.kt
         }
     }
 

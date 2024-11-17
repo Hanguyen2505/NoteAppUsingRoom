@@ -12,11 +12,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.noteappusingroomdatabase.BottomSheetListener
-import com.example.noteappusingroomdatabase.NoteViewModel
 import com.example.noteappusingroomdatabase.R
 import com.example.noteappusingroomdatabase.databinding.FragmentUpdateBinding
-import com.example.noteappusingroomdatabase.roomdatabase.note.Note
-import com.example.noteappusingroomdatabase.ui.fragments.UpdateFragmentArgs
+import com.example.noteappusingroomdatabase.ui.fragments.note.UpdateFragmentArgs
+import com.example.noteappusingroomdatabase.ui.viewmodel.NoteViewModel
 
 class UpdateFragment : Fragment(), BottomSheetListener {
 
