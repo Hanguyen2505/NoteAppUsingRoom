@@ -68,14 +68,15 @@ class UpdateFragment : Fragment(), BottomSheetListener {
     }
 
     private fun updateItem() {
-        val title = binding.title.text.toString()
-        val subTitle = binding.subtitle.text.toString()
-        val noteInput = binding.noteInput.text.toString()
+        val title = binding.title.text.toString().trim()
+        val subTitle = binding.subtitle.text.toString().trim()
+        val noteInput = binding.noteInput.text.toString().trim()
         val noteColor = noteTheme
 
         if (inputCheck(title)) {
             val note = Note(args.currentNote.id, firebaseAuth.currentUser!!.uid, title, subTitle, noteInput, noteColor)
             mNoteViewModel.upsertNote(note)
+            mNoteViewModel.uploadNote(note)
         }
     }
 
@@ -100,6 +101,7 @@ class UpdateFragment : Fragment(), BottomSheetListener {
         builder.setPositiveButton("Yes") {_, _ ->
             val note = Note(args.currentNote.id, firebaseAuth.currentUser!!.uid, title, subTitle, noteInput, noteTheme)
             mNoteViewModel.deleteNote(note)
+            mNoteViewModel.deleteNoteFromRemote(note)
             findNavController().navigate(R.id.action_updateFragment_to_listNoteFragment)
             Toast.makeText(requireContext(), "Successfully deleted", Toast.LENGTH_SHORT).show()
         }

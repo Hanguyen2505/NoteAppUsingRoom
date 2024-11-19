@@ -1,11 +1,13 @@
 package com.example.noteappusingroomdatabase.ui.fragments.note
 
+import android.app.AlertDialog
 import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.noteappusingroomdatabase.BottomSheetListener
@@ -62,15 +64,16 @@ class NoteFragment : Fragment(), BottomSheetListener {
 
     //check if the title is not empty, then the note can be saved
     private fun insertToDatabase() {
-        val title = _binding?.title?.text.toString()
-        val subTitle = _binding?.subtitle?.text.toString()
-        val noteInput = _binding?.noteInput?.text.toString()
+        val title = _binding?.title?.text.toString().trim()
+        val subTitle = _binding?.subtitle?.text.toString().trim()
+        val noteInput = _binding?.noteInput?.text.toString().trim()
         val noteColor = noteTheme
 
         //check if the user
         if (inputCheck(title)) {
             val note = Note(0, firebaseAuth.currentUser!!.uid, title, subTitle, noteInput, noteColor)
             mNoteViewModel.upsertNote(note)
+            mNoteViewModel.uploadNote(note)
         }
     }
 
@@ -94,7 +97,21 @@ class NoteFragment : Fragment(), BottomSheetListener {
     }
 
     override fun onDeleteButtonClicked() {
+        val title = binding.title.text.toString()
+        val subTitle = binding.subtitle.text.toString()
+        val noteInput = binding.noteInput.text.toString()
 
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setPositiveButton("Yes") {_, _ ->
+            findNavController().navigate(R.id.action_noteFragment_to_listNoteFragment)
+            Toast.makeText(requireContext(), "Successfully deleted", Toast.LENGTH_SHORT).show()
+        }
+        builder.setNegativeButton("No") {_, _ ->
+
+        }
+        builder.setTitle("Do you want to delete ")
+        builder.setMessage("Are you sure to DELETE $title")
+        builder.show()
     }
 
     //*** change the color of viewSubtitleIndicator

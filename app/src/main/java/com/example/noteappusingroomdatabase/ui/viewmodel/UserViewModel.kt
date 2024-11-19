@@ -41,7 +41,6 @@ class UserViewModel(application: Application): AndroidViewModel(application) {
     fun loginUser(email: String, password: String){
         viewModelScope.launch(Dispatchers.IO) {
             val result = repository.loginUser(email, password)
-            loginResult.postValue(result)
             if (result.isSuccess) {
                 val user = result.getOrNull()
                 Log.d("currentUserLoggedIn", "${user?.email}")
@@ -49,8 +48,8 @@ class UserViewModel(application: Application): AndroidViewModel(application) {
             else {
                 val exception = result.exceptionOrNull()
                 Log.d("currentUserLoggedIn", "${exception?.message}")
-
             }
+            loginResult.postValue(result)
         }
     }
 

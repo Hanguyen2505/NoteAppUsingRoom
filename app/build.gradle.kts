@@ -59,6 +59,7 @@ dependencies {
     implementation(libs.firebase.auth.ktx)
     implementation(libs.firebase.auth.ktx)
     implementation(libs.firebase.auth)
+    implementation(libs.firebase.firestore)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -71,10 +72,8 @@ dependencies {
 
     implementation ("androidx.fragment:fragment-ktx:1.6.1") // Check for the latest version
 
-
     implementation ("javax.xml.bind:jaxb-api:2.3.1")
     implementation ("org.glassfish.jaxb:jaxb-runtime:2.3.1")
-
 
     implementation("androidx.room:room-runtime:2.6.1")
     kapt("androidx.room:room-compiler:2.6.1")
@@ -108,6 +107,8 @@ dependencies {
     api ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.5")
 
     kapt("com.android.databinding:compiler:3.1.4")
+
+    implementation("androidx.work:work-runtime-ktx:2.7.0")
 
 
 }

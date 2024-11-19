@@ -24,8 +24,6 @@ class ListNoteFragment : Fragment(){
 
     private lateinit var mUserViewModel: UserViewModel
 
-    private val firebaseAuth = FirebaseAuth.getInstance()
-
     private var _binding: FragmentListNoteBinding? = null
     private val binding get() = _binding!!
 
@@ -69,6 +67,7 @@ class ListNoteFragment : Fragment(){
         mNoteViewModel = ViewModelProvider(this)[NoteViewModel::class.java]
         mUserViewModel = ViewModelProvider(this)[UserViewModel::class.java]
 
+        mNoteViewModel.setupWorkRequest()
 
         mUserViewModel.currentUser.observe(viewLifecycleOwner) { user ->
             Log.d("UserIdListNote", "Firebase LiveData: ${user?.uid}")
@@ -77,8 +76,6 @@ class ListNoteFragment : Fragment(){
                 adapter.setData(notes)
             }
         }
-
-
 
         return binding.root
     }
